@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+const colors = require("colors");
 const { Command } = require('commander');
 const program = new Command();
 
@@ -31,9 +32,15 @@ program.command('email')
   .description('Copy or send email')
   .action(handleEmail);
 
-import("update-notifier").then(async ({ default: updateNotifier }) => {
-  const notifier = updateNotifier({pkg: packageJson});  
-  notifier.notify()
-  program.parse();
-})
+import("update-notifier").then(({ default: updateNotifier }) => {
 
+  updateNotifier({
+    pkg: packageJson,
+  }).notify({
+    isGlobal: true,
+    message: `Hey there! Some new things happened in my career\nPlease run ${colors.blue("npm i -g burawi")} to get them`
+  });
+
+  program.parse()
+
+})

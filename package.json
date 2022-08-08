@@ -1,6 +1,6 @@
 {
   "name": "burawi",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "My cli resume",
   "main": "index.js",
   "bin": {
