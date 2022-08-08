@@ -2,19 +2,16 @@
 const { Command } = require('commander');
 const program = new Command();
 
-const getCurrentVersion = require("./lib/getCurrentVersion");
-
 const getAbout = require("./lib/getAbout")
 const getInfo = require("./lib/getInfo")
 const openLink = require("./lib/openLink")
 const handleEmail = require("./lib/handleEmail")
-
-const version = getCurrentVersion();
+const packageJson = require("./package.json")
 
 program
   .name('burawi')
   .description('My resume in you CLI')
-  .version(version);
+  .version(packageJson.version);
 
 program.command('about')
   .description('Get a brief yet general presentation about me')
@@ -34,4 +31,9 @@ program.command('email')
   .description('Copy or send email')
   .action(handleEmail);
 
-program.parse();
+import("update-notifier").then(async ({ default: updateNotifier }) => {
+  const notifier = updateNotifier({pkg: packageJson});  
+  notifier.notify()
+  program.parse();
+})
+
