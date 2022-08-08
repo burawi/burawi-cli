@@ -1,0 +1,39 @@
+{
+  "name": "burawi",
+  "version": "1.0.0",
+  "description": "My cli resume",
+  "main": "index.js",
+  "bin": {
+    "burawi": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/burawi/burawi-cli.git"
+  },
+  "keywords": [
+    "Resume",
+    "Burawi",
+    "CLI"
+  ],
+  "author": "Burawi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/burawi/burawi-cli/issues"
+  },
+  "homepage": "https://github.com/burawi/burawi-cli#readme",
+  "dependencies": {
+    "cli-box": "^6.0.10",
+    "clipboardy": "^3.0.0",
+    "colors": "^1.4.0",
+    "commander": "^9.4.0",
+    "dayjs": "^1.11.4",
+    "open": "^8.4.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  }
+}
