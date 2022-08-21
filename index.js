@@ -57,16 +57,6 @@ program.command('stage')
   .description('List my on-stage experiences')
   .action(getStage);
 
-// professional DONE
-// education DONE
-// certs DONE
-// stage DONE
-// services DONE
-// mailto DONE
-// review do nexts
-// on Nothing
-// Readme
-
 import("update-notifier").then(({ default: updateNotifier }) => {
 
   updateNotifier({
