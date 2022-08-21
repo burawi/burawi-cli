@@ -4,7 +4,12 @@ const { Command } = require('commander');
 const program = new Command();
 
 const getAbout = require("./lib/getAbout")
+const getServices = require("./lib/getServices")
 const getInfo = require("./lib/getInfo")
+const getProfessional = require("./lib/getProfessional")
+const getEducation = require("./lib/getEducation")
+const getCerts = require("./lib/getCerts")
+const getStage = require("./lib/getStage")
 const openLink = require("./lib/openLink")
 const handleEmail = require("./lib/handleEmail")
 const packageJson = require("./package.json")
@@ -17,6 +22,10 @@ program
 program.command('about')
   .description('Get a brief yet general presentation about me')
   .action(getAbout);
+
+program.command('services')
+  .description('Know about the services I provide')
+  .action(getServices);
 
 program.command('info')
   .description('List my info')
@@ -31,6 +40,32 @@ program.command('email')
   .argument('[action]', "copy | send", "copy")
   .description('Copy or send email')
   .action(handleEmail);
+
+program.command('professional')
+  .description('List my different professional experiences')
+  .action(getProfessional);
+
+program.command('education')
+  .description('List my education path')
+  .action(getEducation);
+
+program.command('certs')
+  .description('List my certifications and awards')
+  .action(getCerts);
+
+program.command('stage')
+  .description('List my on-stage experiences')
+  .action(getStage);
+
+// professional DONE
+// education DONE
+// certs DONE
+// stage DONE
+// services DONE
+// mailto DONE
+// review do nexts
+// on Nothing
+// Readme
 
 import("update-notifier").then(({ default: updateNotifier }) => {
 
