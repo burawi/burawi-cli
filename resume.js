@@ -114,6 +114,12 @@ Then we started to enhance the project progressively. At the time when I left it
       by: "The Linux Foundation"
     },
     {
+      name: "JSNAD: OpenJS Node.js Services Developer",
+      date: "09/2022",
+      link: "https://www.credly.com/badges/86e38511-0d55-411c-a5d3-15b7897d326c/public_url",
+      by: "The Linux Foundation"
+    },
+    {
       name: "Certificate of appreciation",
       date: "05/2021",
       link: "https://drive.google.com/file/d/1GkJSsdoWWv87nbt_kGC24jcStCkJXbs-/view?usp=sharing",
