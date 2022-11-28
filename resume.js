@@ -1,6 +1,6 @@
 module.exports = {
   fullname: "Burawi Ben Ammar",
-  title: "Senior Web Developer & Tech Team Lead",
+  title: "Head of Engineering",
   address: "Türkiye, Kocaeli, İzmit 🇹🇷",
   nationality: "Tunisian 🇹🇳",
   languages: {
@@ -24,7 +24,8 @@ module.exports = {
     "Think-it": [
       {
         from: "11/2021",
-        title: "Senior Web Developer",
+        to: "12/2022",
+        title: "Senior Web Developer & Team Lead",
         description: `Think-it is an engineering collective on a mission to unlock human potential through sustainable use of technology. Our high-tech, low-carbon solutions help innovative teams around the world lower costs, democratize data, and reach net-zero faster. 
 
 With a focus on digital transformation, smart infrastructure, and the UN SDGs, we tackle meaningful problems that can only be solved with future-proof technology. Our team includes experts in Software Engineering, Machine Learning, and DevOps & Cloud.
@@ -36,17 +37,20 @@ To learn more, visit us at www.think-it.io or get in touch at partners@think-it.
       {
         from: "02/2022",
         to: "07/2022",
-        title: "BMW GAIA-X Connectors - Frontend Developer",
+        title: "BMW GAIA-X Connectors - Senior Frontend Developer",
+        logo: "assets/images/bmw.png" 
       },
       {
         from: "08/2022",
-        title: "Elona - Development Team Lead"
+        title: "Elona - Development Team Lead",
+        logo: "assets/images/elona.jpeg" 
       }
     ],
     Tildah: [
       {
         from: "07/2018",
         title: "Founder and Fullstack developer",
+        logo: "assets/images/majenna.png",
         description: `After my previous experience of co-founding a start-up, I wanted to start a new journey trying to apply what I learned before and founded Tildah.
 The main project of Tildah was Majenna POS, a cloud-based POS software developed mainly by myself with little teams of internals joining from time to time. It handles many aspects of commercial stores, fast foods, restaurants, and coffee shops, from article management to sales analytics.
 Majenna was a cross-platform app, I used the PWA technology to make it hybrid.`
@@ -56,7 +60,8 @@ Majenna was a cross-platform app, I used the PWA technology to make it hybrid.`
       {
         from: "08/2020",
         to: "12/2020",
-        title: "Senior Frontend Developer",
+        title: "Stuart XL - Senior Frontend Developer",
+        logo: "assets/images/stuart.jpeg",
         description: `I joined Craft Foundry as a senior web developer in which I was assigned to the StuartXL project with the responsibility of creating a new front-end app from scratch.
 The motivation behind the project was that Stuart delivery solutions were making deliveries for all kinds of items in the same interface, and they felt the need to separate big items from small ones.`
       }
@@ -70,9 +75,13 @@ The motivation behind the project was that Stuart delivery solutions were making
     ],
     "Armada Delivery Solutions": [
       {
+        from: "12/2022",
+        title: "Head of Engineering",
+      },
+      {
         from: "02/2019",
         to: "05/2019",
-        title: "Senior Software Engineer",
+        title: "Fullstack web developer",
         description: `Armada delivery solutions is a Kuwaiti start-up specialized in delivery I joined the team and worked on new features of the app.`
       }
     ],
@@ -119,12 +128,6 @@ Then we started to enhance the project progressively. At the time when I left it
       link: "https://www.credly.com/badges/86e38511-0d55-411c-a5d3-15b7897d326c/public_url",
       by: "The Linux Foundation"
     },
-    {
-      name: "Certificate of appreciation",
-      date: "05/2021",
-      link: "https://drive.google.com/file/d/1GkJSsdoWWv87nbt_kGC24jcStCkJXbs-/view?usp=sharing",
-      by: "NATEG Issat Sousse Student Chapter"
-    }
   ],
   stage: [
     {
@@ -133,6 +136,13 @@ Then we started to enhance the project progressively. At the time when I left it
       link: "https://www.facebook.com/TunisianJS/videos/tunisian-js-community-summit-v10/994953364389443",
       date: "12/12/2021",
       description: `During the community summit v1 of the Tunisian JS Community group. I was invited to give a presentation in which I talked about the necessity of creating a programming language in Arabic that would compile to Javascript and the purposes of such a project.`
+    },
+    {
+      title: "Jury member in NATEG Ideawar",
+      by: "Nateg Issat Sousse Student Chapter",
+      link: "https://drive.google.com/file/d/1GkJSsdoWWv87nbt_kGC24jcStCkJXbs-/view?usp=sharing",
+      date: "05/2021",
+      description: `I was invited by the NATEG student chapter of ISSAT Sousse, to be a member in the jury team of the ideawar, that took place remotely. The subject of the ideathon was: Education for disabled people during the pandemic.`
     },
     {
       title: "Web Components (custom elements) Talk",
@@ -163,15 +173,61 @@ Then we started to enhance the project progressively. At the time when I left it
       description: `After the success of the first session, the IssatSo Google Developer Students Club invited me again to give another NodeJS training course for the institute students`
     },
   ],
+  projects: [
+    {
+      name: "Hayya",
+      date: "09/2022",
+      description: "A fast config HTTP client testing library",
+      type: "open-source",
+      skills: [ "NodeJS", "Jest", "axios", "Tatabot (Own project)", "Conventional Commits", "Husky" ],
+    },
+    {
+      name: "ZinkyJS",
+      date: "2017",
+      description: "A modular framework for NodeJS",
+      type: "open-source",
+      skills: [ "NodeJS" ],
+    },
+    {
+      name: "Tayr ORM",
+      date: "2017",
+      description: "An easy on-the-fly ORM for NodeJS, inspired by RedBeanPHP",
+      type: "open-source",
+      skills: [ "NodeJS", "SQL" ],
+    },
+    {
+      name: "Maknaze",
+      date: "11/2018",
+      description: "A market place for second hand books",
+      type: "Personal",
+      skills: ["NodeJS", "ZinkyJS", "MongoDB", "VueJS", "Heroku"],
+    },
+    {
+      name: "Ruznamer",
+      date: "08/2017",
+      description: "A web app that generates automatically private schools classes schedules according to teachers and classrooms availability, and following the country laws restrictions.",
+      type: "End of study project",
+      skills: ["NodeJS", "ZinkyJS", "MongoDB", "VueJS", "Heroku"],
+    },
+    {
+      name: "Tshikoo",
+      date: "01/2017",
+      description: "An app that allows cash money transfers through groceries and small stores.",
+      type: "Personal",
+      skills: ["NativeScript", "NodeJS", "ExpressJS", "TayrORM", "MySQL", "Redis"],
+    },
+    {
+      name: "Mualaqat",
+      date: "12/2015",
+      description: "A social network of Arab poetry. In this project I Scrapped the leading Arab poetry website at that time to get a huge database of 50k poems.",
+      type: "Personal",
+      skills: ["PHP", "PureCSS", "AngularJS", "GoDaddy VPS", "Web scrapping"],
+    },
+  ],
   services: `Given my experience in the field, I would be glad to help any business in building the web-based software they need and a strong team with a sustainable culture that could go far in allowing the business to unleash its total potential.
 
 Areas of expertise:
-  IT Consulting
-  Application Development
-  Web Development
-  Software Testing
-  User Experience Design (UED)
-  Project Management
+  IT Consulting, Application Development, Web Development, Software Testing, Project Management
   `,
   about: `Having a special career path, mixing web development with entrepreneurship, I'm a person who is attracted by the kind of challenges in which a fast delivery is required without losing a strong team building.
 

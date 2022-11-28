@@ -12,6 +12,7 @@ const getCerts = require("./lib/getCerts")
 const getStage = require("./lib/getStage")
 const openLink = require("./lib/openLink")
 const handleEmail = require("./lib/handleEmail")
+const renderWeb = require("./lib/renderWeb")
 const packageJson = require("./package.json")
 
 program
@@ -56,6 +57,11 @@ program.command('certs')
 program.command('stage')
   .description('List my on-stage experiences')
   .action(getStage);
+
+program.command('render')
+  .argument('[output]', "The path to the output dir", "burawi_resume")
+  .description('Render my resume to a web page')
+  .action(renderWeb);
 
 import("update-notifier").then(({ default: updateNotifier }) => {
 

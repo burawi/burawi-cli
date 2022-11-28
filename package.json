@@ -30,6 +30,7 @@
     "colors": "^1.4.0",
     "commander": "^9.4.0",
     "dayjs": "^1.11.4",
+    "ejs": "^3.1.8",
     "open": "^8.4.0",
     "prompts": "^2.4.2",
     "update-notifier": "^6.0.2"

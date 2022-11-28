@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Burawi Ben Ammar</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
+    <link rel="shortcut icon" href="favicon.ico">  
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS-->
+	<script defer src="assets/fontawesome/js/all.min.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/orbit-1.css">
+</head> 
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+            <div class="profile-container">
+                <img class="profile" src="assets/images/profile.jpeg" alt="" />
+                <h1 class="name"><%= fullname %></h1>
+                <h3 class="tagline"><%= title %></h3>
+            </div><!--//profile-container-->
+
+            <div class="container-block">
+                <ul class="list-unstyled contact-list">
+                    <li class="nationality"><i class="fa-solid fa-flag"></i><%= nationality %></li>
+                    <li class="address"><i class="fa-solid fa-location-pin"></i><%= address %></li>
+                    <li class="email"><i class="fa-solid fa-envelope"></i><a href="mailto: <%= contact.Email %>"><%= contact.Email %></a></li>
+                    <li class="phone"><i class="fa-solid fa-phone"></i><a href="tel:<%= contact["Phone/WhatsApp"] %>"><%= contact["Phone/WhatsApp"] %></a></li>
+                </ul>
+            </div>
+            
+            <div class="contact-container container-block">
+                <h2 class="container-block-title">Links</h2>
+                <ul class="list-unstyled contact-list">
+                    <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="https://www.linkedin.com/in/burawi-ben-ammar/" target="_blank">/in/burawi-ben-ammar</a></li>
+                    <li class="github"><i class="fa-brands fa-github"></i><a href="https://github.com/burawi" target="_blank">burawi</a></li>
+                    <li class="gitlab"><i class="fa-brands fa-gitlab"></i><a href="https://gitlab.com/burawi.ba" target="_blank">burawi.ba</a></li>
+                    <li class="medium"><i class="fa-brands fa-medium"></i><a href="https://medium.com/@burawi" target="_blank">@burawi</a></li>
+                </ul>
+            </div><!--//contact-container-->
+
+            <div class="education-container container-block">
+                <h2 class="container-block-title">Certificates</h2>
+                <% certs.forEach(function(item) { %>
+                    <div class="item">
+                        <h4 class="degree"><%= item.name %></h4>
+                        <h5 class="meta"><%= item.by %></h5>
+                        <div class="time"><%= item.date %></div>
+                    </div>
+                <% }) %>
+            </div><!--//education-container-->
+            
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Languages</h2>
+                <ul class="list-unstyled interests-list">
+                    <% Object.entries(languages).forEach(function([language, level]) { %>
+                        <li><%= language %> <span class="lang-desc">(<%= level %>)</span></li>
+                    <% }) %>
+                </ul>
+            </div><!--//interests-->
+            
+        </div><!--//sidebar-wrapper-->
+        
+        <div class="main-wrapper">
+            
+            <section class="block">
+                <h2 class="block-title"><span class="block-title-icon"><i class="fa-solid fa-user"></i></span>Summary</h2>
+                <div class="block-content">
+                    <div class"block-desc">
+                        <%- about.replaceAll("\n", "<br/>") %>
+                    </div>
+                </div><!--//summary-->
+            </section><!--//section-->
+
+            <!-- <section class="block"> -->
+                <!-- <h2 class="block-title"><span class="block-title-icon"><i class="fa-solid fa-bell-concierge"></i></span>Services</h2> -->
+                <!-- <div class="block-content"> -->
+                    <!-- <div class"block-desc"> -->
+                        <!-- <%- services.replaceAll("\n", "<br/>") %> -->
+                    <!-- </div> -->
+                <!-- </div>[>//summary<] -->
+            <!-- </section>[>//section<] -->
+
+            <section class="block">
+                <h2 class="block-title"><span class="block-title-icon"><i class="fa-solid fa-briefcase"></i></span>Experiences</h2>
+                
+                <div class="block-content">
+                    <% Object.entries(professional).forEach(([company, jobs]) => { %>
+                        <div class="block-group">
+                            <h3 class="block-group-title">
+                                <img class="block-group-logo" src="<%= companiesLogos[company] %>"/>
+                                At <%= company %>
+                            </h3>
+                            <div class="block-group-content">
+                                <% jobs.forEach(job => { %>
+                                    <div class="block-item">
+                                        <div class="block-header">
+                                            <h3 class="block-item-title">
+                                                <%= job.title %>
+                                                <% if(job.logo) { %>
+                                                    <img class="block-item-logo" src="<%= job.logo %>"/>
+                                                <% } %>
+                                            </h3>
+                                            <div class="block-time">
+                                                <%= job.from %> - <%= job.to ?? "Present" %>
+                                            </div>
+                                        </div><!--//upper-row-->
+                                        <div class="block-desc">
+                                            <%= job.description %>
+                                        </div><!--//details-->
+                                    </div><!--//item-->
+                                <% }) %>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+                
+            </section><!--//section-->
+
+            <section class="block break-before">
+                <h2 class="block-title"><span class="block-title-icon"><i class="fa-solid fa-microphone"></i></span>On Stage Experiences</h2>
+                <div class="block-content">
+                    <% stage.forEach(item => { %>
+                        <div class="block-item">
+                            <div class="block-header">
+                                <h3 class="block-item-title">
+                                    <%= item.title %>
+                                </h3>
+                                <div class="block-time">
+                                    <%= item.date %> 
+                                </div>
+                            </div><!--//upper-row-->
+                            <div class="block-subtitle">
+                                <%= item.by %>
+                            </div>
+                            <div class="block-desc">
+                                <%= item.description %>
+                            </div><!--//details-->
+                        </div><!--//item-->
+                    <% }) %>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block-title"><span class="block-title-icon"><i class="fa-solid fa-graduation-cap"></i></span>Education</h2>
+                <div class="block-content">
+                    <% education.forEach(item => { %>
+                        <div class="block-item">
+                            <div class="block-header">
+                                <h3 class="block-item-title">
+                                    <%= item.title %>
+                                </h3>
+                            </div><!--//upper-row-->
+                            <div class="block-subtitle">
+                                <%= item.institution %>
+                                - (<%= item.from %> - <%= item.to ?? "Present" %>)
+                            </div>
+                        </div><!--//item-->
+                    <% }) %>
+                </div>
+            </section>
+
+            <section class="block break-before">
+                <h2 class="block-title"><span class="block-title-icon"><i class="fa-solid fa-archive"></i></span>Projects</h2>
+                <div class="block-content">
+                    <% projects.forEach(item => { %>
+                        <div class="block-item">
+                            <div class="block-header">
+                                <h3 class="block-item-title">
+                                    <%= item.name %>
+                                </h3>
+                                <div class="block-time">
+                                    <%= item.date %> 
+                                </div>
+                            </div><!--//upper-row-->
+                            <div class="block-subtitle">
+                                <%= item.type %>
+                            </div>
+                            <div class="block-desc">
+                                <%= item.description %>
+                            </div>
+                            <div class="block-footer">
+                                Tools & Skills: <%= item.skills.join(", ") %>
+                            </div>
+                        </div><!--//item-->
+                    <% }) %>
+                </div>
+            </section>
+        </div><!--//main-body-->
+    </div>
+</body>
+</html> 
+
